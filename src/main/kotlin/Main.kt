@@ -3,6 +3,7 @@ package se.horv
 import se.horv.day01.Day01
 import se.horv.day02.Day02
 import se.horv.day03.Day03
+import se.horv.day04.Day04
 import se.horv.util.Solver
 import java.io.File
 
@@ -29,12 +30,12 @@ enum class Day {
 }
 
 fun main() {
-    val day = Day.Day03
+    val day = Day.Day04
     val daySolver: Solver = when(day) {
         Day.Day01 -> Day01()
         Day.Day02 -> Day02()
         Day.Day03 -> Day03()
-        Day.Day04 -> TODO()
+        Day.Day04 -> Day04()
         Day.Day05 -> TODO()
         Day.Day06 -> TODO()
         Day.Day07 -> TODO()
