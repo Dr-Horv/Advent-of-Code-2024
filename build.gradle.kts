@@ -1,4 +1,5 @@
 plugins {
+    application
     kotlin("jvm") version "2.0.21"
 }
 
@@ -11,6 +12,10 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+}
+
+application {
+    mainClass = "se.horv.MainKt"
 }
 
 tasks.test {
