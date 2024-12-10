@@ -12,6 +12,7 @@ import se.horv.day09.Day09
 import se.horv.day10.Day10
 import se.horv.util.Solver
 import java.io.File
+import kotlin.time.measureTime
 
 enum class Day {
     Day01,
@@ -62,7 +63,11 @@ fun main(vararg args: String) {
     }
     val filePath = "src/main/kotlin/${day.toString().lowercase()}/input.txt"
     val lines = File(filePath).readLines()
-    val result = daySolver.solve(lines, true)
+    val duration = measureTime {
+        val result = daySolver.solve(lines, true)
+        println(result)
+    }
+    println()
+    println("${duration.inWholeMilliseconds}ms")
 
-    println(result)
 }

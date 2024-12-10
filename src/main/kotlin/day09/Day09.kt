@@ -81,25 +81,18 @@ class Day09: Solver {
 
             var search: Node? = start
             while (search != null && toMove != null && search != toMove) {
-                if (search.type == Type.BLOCKS) {
-                    search = search.right
-                    continue
+                if (search.type == Type.FREE && search.size >= toMove.size) {
+                    val empty = Node(-1, toMove.size, Type.FREE)
+                    toMove.replace(empty)
+                    search.replace(toMove)
+                    if (search.size > toMove.size) {
+                        toMove.addAfter(Node(-1, search.size - toMove.size, Type.FREE))
+                    }
+                    toMove = empty
+                    break
                 }
 
-                if (search.size < toMove.size) {
-                    search = search.right
-                    continue
-                }
-
-                val empty = Node(-1, toMove.size, Type.FREE)
-                toMove.replace(empty)
-                search.replace(toMove)
-                if (search.size > toMove.size) {
-                    val free = Node(-1, search.size - toMove.size, Type.FREE)
-                    toMove.addAfter(free)
-                }
-                toMove = empty
-                break
+                search = search.right
             }
             toMove = toMove?.left
         }
