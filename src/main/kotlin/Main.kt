@@ -10,6 +10,7 @@ import se.horv.day07.Day07
 import se.horv.day08.Day08
 import se.horv.day09.Day09
 import se.horv.day10.Day10
+import se.horv.day11.Day11
 import se.horv.util.Solver
 import java.io.File
 import kotlin.time.measureTime
@@ -38,7 +39,7 @@ enum class Day {
 }
 
 fun main(vararg args: String) {
-    val day = Day.Day09
+    val day = Day.Day11
     val daySolver: Solver = when(day) {
         Day.Day01 -> Day01()
         Day.Day02 -> Day02()
@@ -50,7 +51,7 @@ fun main(vararg args: String) {
         Day.Day08 -> Day08()
         Day.Day09 -> Day09()
         Day.Day10 -> Day10()
-        Day.Day11 -> TODO()
+        Day.Day11 -> Day11()
         Day.Day12 -> TODO()
         Day.Day13 -> TODO()
         Day.Day14 -> TODO()
