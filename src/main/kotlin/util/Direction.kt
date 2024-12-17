@@ -3,6 +3,13 @@ package se.horv.util
 enum class Direction {
     UP, DOWN, LEFT, RIGHT;
 
+    override fun toString(): String = when(this) {
+        UP -> "^"
+        DOWN -> "v"
+        LEFT -> "<"
+        RIGHT -> ">"
+    }
+
     fun turnRight(): Direction = when (this) {
         UP -> RIGHT
         DOWN -> LEFT
