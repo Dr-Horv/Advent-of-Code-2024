@@ -30,4 +30,23 @@ enum class Direction {
         LEFT -> RIGHT
         RIGHT -> LEFT
     }
+
+    companion object {
+        fun fromString(s: String): Direction = when (s) {
+            "<" -> LEFT
+            ">" -> RIGHT
+            "v"-> DOWN
+            "^" -> UP
+            else -> throw IllegalArgumentException("Invalid string $s")
+        }
+
+        fun fromChar(c: Char): Direction = when (c) {
+            '<' -> LEFT
+            '>' -> RIGHT
+            'v' -> DOWN
+            '^' -> UP
+            else -> throw IllegalArgumentException("Invalid character $c")
+        }
+
+    }
 }

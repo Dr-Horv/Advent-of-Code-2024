@@ -1,5 +1,7 @@
 package se.horv.util
 
+import kotlin.math.abs
+
 data class Coordinate(val x: Int, val y: Int) {
     override fun toString(): String = "($x, $y)"
     operator fun plus(other: Coordinate): Coordinate = Coordinate(x + other.x, y + other.y)
@@ -12,4 +14,7 @@ data class Coordinate(val x: Int, val y: Int) {
         }
     )
     operator fun minus(other: Coordinate): Coordinate = Coordinate(x - other.x, y - other.y)
+
+    fun manhattanDistance(other: Coordinate): Int = abs(x - other.x) + abs(y - other.y)
+    fun difference(other: Coordinate): Pair<Int, Int> = Pair(other.x - x, other.y - y)
 }
