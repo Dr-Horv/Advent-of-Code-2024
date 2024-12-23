@@ -19,8 +19,13 @@ import se.horv.day16.Day16
 import se.horv.day17.Day17
 import se.horv.day18.Day18
 import se.horv.day19.Day19
+import se.horv.day20.Day20
+import se.horv.day21.Day21
+import se.horv.day22.Day22
+import se.horv.day23.Day23
 import se.horv.util.Solver
 import java.io.File
+import kotlin.time.DurationUnit
 import kotlin.time.measureTime
 
 enum class Day {
@@ -51,7 +56,7 @@ enum class Day {
 }
 
 fun main(vararg args: String) {
-    val day = Day.Day19
+    val day = Day.Day23
     val daySolver: Solver = when(day) {
         Day.Day01 -> Day01()
         Day.Day02 -> Day02()
@@ -72,10 +77,10 @@ fun main(vararg args: String) {
         Day.Day17 -> Day17()
         Day.Day18 -> Day18()
         Day.Day19 -> Day19()
-        Day.Day20 -> TODO()
-        Day.Day21 -> TODO()
-        Day.Day22 -> TODO()
-        Day.Day23 -> TODO()
+        Day.Day20 -> Day20()
+        Day.Day21 -> Day21()
+        Day.Day22 -> Day22()
+        Day.Day23 -> Day23()
         Day.Day24 -> TODO()
     }
     val filePath = "src/main/kotlin/${day.toString().lowercase()}/input.txt"
@@ -86,5 +91,7 @@ fun main(vararg args: String) {
     }
     println()
     println("${duration.inWholeMilliseconds}ms")
+    println(duration.toString(DurationUnit.SECONDS, 3))
+    println(duration.toString(DurationUnit.MINUTES, 2))
 
 }
