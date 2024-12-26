@@ -23,6 +23,7 @@ import se.horv.day20.Day20
 import se.horv.day21.Day21
 import se.horv.day22.Day22
 import se.horv.day23.Day23
+import se.horv.day24.Day24
 import se.horv.util.Solver
 import java.io.File
 import kotlin.time.DurationUnit
@@ -56,7 +57,7 @@ enum class Day {
 }
 
 fun main(vararg args: String) {
-    val day = Day.Day23
+    val day = Day.Day24
     val daySolver: Solver = when(day) {
         Day.Day01 -> Day01()
         Day.Day02 -> Day02()
@@ -81,7 +82,7 @@ fun main(vararg args: String) {
         Day.Day21 -> Day21()
         Day.Day22 -> Day22()
         Day.Day23 -> Day23()
-        Day.Day24 -> TODO()
+        Day.Day24 -> Day24()
     }
     val filePath = "src/main/kotlin/${day.toString().lowercase()}/input.txt"
     val lines = File(filePath).readLines()

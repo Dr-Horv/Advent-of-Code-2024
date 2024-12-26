@@ -46,10 +46,10 @@ class Day23: Solver {
     }
 
     private fun part2(nodes: Map<String, Node>): String {
-        val mostNeighboursFirst = nodes.values.sortedByDescending { it.neighbours.size }
+        val nodeList = nodes.values
         val alternatives = mutableListOf<String>()
-        for (n1 in mostNeighboursFirst) {
-            for (n2 in mostNeighboursFirst) {
+        for (n1 in nodeList) {
+            for (n2 in nodeList) {
                 if(n1 == n2) continue
                 if(n1.neighbours.contains(n2)) {
                     val common = n1.neighbours.filter { n2.neighbours.contains(it) }.toMutableSet()
